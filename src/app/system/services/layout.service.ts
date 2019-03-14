@@ -18,8 +18,9 @@ export class LayoutService {
     }
     init() {
         this._tabs = [{
-            id: '0', index: 0, enabled: true, name: '首页', close: false, icon: 'fc-icon-home', content:
-                { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: FCCONFIG.pid, MENUTYPE: 'INURL' }
+            id: '0', name: '首页',close: false,index: 0, enabled: true,   icon: 'fc-icon-home', content:
+                { ID: '0', MENUID: 'HOME', ROUTER: 'home', PID: FCCONFIG.pid, MENUTYPE: 'INURL' },
+                refresh:'N'
         }];
         this._selectedIndex = "0";
     }
@@ -79,7 +80,8 @@ export class LayoutService {
                 name: menu.MENUNAME,
                 close: true,
                 icon: menu.MENUICON,
-                content: menu
+                content: menu,
+                refresh:'N'
             });
             this._selectedIndex = this._tabs.length - 1 + "";
         } else {
